@@ -2,7 +2,7 @@
 
 Name:		perl-%{realname}
 Version:	0.01
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	GPL or Artistic
 Group:		Development/Perl
 Summary:	Publish MythTV videos to DAAP clients like Apple's Front Row
