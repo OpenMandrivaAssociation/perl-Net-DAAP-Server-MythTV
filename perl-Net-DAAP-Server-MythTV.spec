@@ -1,15 +1,18 @@
-%define realname Net-DAAP-Server-MythTV
+%define upstream_name    Net-DAAP-Server-MythTV
+%define upstream_version 0.01
 
-Name:		perl-%{realname}
-Version:	0.01
-Release:	%mkrel 4
-License:	GPL or Artistic
-Group:		Development/Perl
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	Publish MythTV videos to DAAP clients like Apple's Front Row
-Source0:	http://search.cpan.org/CPAN/authors/id/J/JA/JABLKO/%{realname}-%{version}.tar.bz2
-Url:		http://search.cpan.org/dist/%{realname}
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://search.cpan.org/CPAN/authors/id/J/JA/JABLKO/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 Requires:	perl-Net-DMAP-Server
 
 %description
@@ -17,7 +20,7 @@ MythTV is a homebrew PVR project. This module publishes MythTV videos,
 including metadata, to DAAP clients like Apple's Front Row.
 
 %prep
-%setup -q -n %{realname}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
