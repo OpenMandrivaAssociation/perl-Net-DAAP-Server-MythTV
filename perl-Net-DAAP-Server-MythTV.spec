@@ -1,15 +1,13 @@
 %define upstream_name    Net-DAAP-Server-MythTV
-%define upstream_version 0.01
-
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Version:	0.01
+Release:	5
 
 Summary:	Publish MythTV videos to DAAP clients like Apple's Front Row
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://search.cpan.org/CPAN/authors/id/J/JA/JABLKO/%{upstream_name}-%{upstream_version}.tar.bz2
+Url:		https://metacpan.org/dist/%{upstream_name}
+Source0:	http://search.cpan.org/CPAN/authors/id/J/JA/JABLKO/%{upstream_name}-%{version}.tar.bz2
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -21,7 +19,7 @@ MythTV is a homebrew PVR project. This module publishes MythTV videos,
 including metadata, to DAAP clients like Apple's Front Row.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -46,9 +44,7 @@ install -m 755 mythdaap %{buildroot}%{_bindir}/mythdaap
 %changelog
 * Wed Jul 29 2009 Jérôme Quelin <jquelin@mandriva.org> 0.10.0-1mdv2010.0
 + Revision: 404069
-- rebuild using %%perl_convert_version
-
-* Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.01-4mdv2009.0
+- rebuild using %0.01 Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.01-4mdv2009.0
 + Revision: 258005
 - rebuild
 
