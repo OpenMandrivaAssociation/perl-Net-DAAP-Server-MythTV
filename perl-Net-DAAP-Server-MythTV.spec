@@ -2,7 +2,7 @@
 %define upstream_version 0.01
 Name:		perl-%{upstream_name}
 Version:	0.01
-Release:	2
+Release:	3
 
 Summary:	Publish MythTV videos to DAAP clients like Apple's Front Row
 License:	GPL+ or Artistic
